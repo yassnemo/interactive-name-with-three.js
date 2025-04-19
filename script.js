@@ -94,15 +94,19 @@ const preload = () => {
           this.colorChange = new THREE.Color();
   
           this.buttom = false;
+
+          // Determine text size based on screen width
+          const isMobile = window.innerWidth <= 768;
+          const currentTextSize = isMobile ? 6 : 14; // Set desktop size to 12
   
           this.data = {
   
               text: 'YASSINE\nERRADOUANI',
-              amount: 1500,
+              amount: isMobile ? 1000 : 1500, // Fewer particles on mobile
               particleSize: 1,
               particleColor: 0xffffff,
-              textSize: 12,
-              area: 300, // Increased area of effect
+              textSize: currentTextSize, // Use dynamic text size
+              area: 300, 
               ease: .05,
           }
   
