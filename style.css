@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); /* Change font import to Montserrat */
 html, body { 
   
   margin: 0;
   height: 100%;
   overflow: hidden;
-  font-family: 'Roboto' !important; 
+  font-family: 'Montserrat', sans-serif !important; /* Change default font */
   color: white;
   font-size: 9px;
 }
@@ -55,4 +55,117 @@ a {
 .logo {
     width: 50px;
     height: 50px;
+}
+
+/* Sidebar Styles */
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px); /* Start 100px below final position */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.side-bar {
+  position: fixed;
+  bottom: 0;
+  width: 40px; /* Adjust width as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px; /* Add some horizontal padding */
+  /* Apply the animation */
+  opacity: 0; /* Start hidden */
+  animation-name: slideUpFadeIn;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; /* Keep final state */
+}
+
+.left-bar {
+  left: 0;
+  animation-delay: 0.5s; /* Delay left bar animation */
+}
+
+.right-bar {
+  right: 0;
+  animation-delay: 0.7s; /* Delay right bar animation slightly more */
+}
+
+/* Vertical Social Links */
+.side-bar .social-links {
+  display: flex;
+  flex-direction: column; /* Stack icons vertically */
+  align-items: center;
+  gap: 25px; /* Space between vertical icons */
+  padding-bottom: 20px; /* Space above the line */
+}
+
+.side-bar .social-links a {
+  color: #ccc;
+  font-size: 20px; /* Slightly smaller icons for vertical layout */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+.side-bar .social-links a:hover {
+  color: #00ffff;
+  transform: scale(1.15) translateY(-2px); /* Add slight upward movement */
+  text-shadow: 0 0 8px #00ffff, 0 0 12px #00ffff;
+}
+
+/* Email Link Style */
+.email-link {
+  padding-bottom: 20px; /* Space above the line */
+}
+
+.email-link a {
+  color: #ccc;
+  font-size: 12px; /* Adjust as needed */
+  text-decoration: none;
+  writing-mode: vertical-rl; /* Vertical text */
+  letter-spacing: 2px; /* Space out letters */
+  transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+.email-link a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+/* Vertical Line Style */
+.line {
+  width: 1px;
+  height: 90px; /* Adjust height as needed */
+  background-color: #ccc;
+}
+
+/* Footer Text Style */
+.footer-text {
+  position: fixed;
+  bottom: 15px; 
+  /* Alternative centering method */
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  /* Remove previous centering */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  width: max-content; /* Keep width based on content */
+  text-align: center; /* Ensure text within the element is centered */
+  color: #fff; 
+  font-size: 14px; 
+  font-family: 'Montserrat', sans-serif; 
+  white-space: nowrap; 
+  /* Apply the animation */
+  opacity: 0; /* Start hidden */
+  animation-name: slideUpFadeIn;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; /* Keep final state */
+  animation-delay: 0.9s; /* Delay footer animation */
 }
